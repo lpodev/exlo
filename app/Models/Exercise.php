@@ -15,4 +15,6 @@ class Exercise extends Model
     protected $casts = [
         'state' => ExerciseState::class,
     ];
+
+    protected $fillable = ['title'];
 }

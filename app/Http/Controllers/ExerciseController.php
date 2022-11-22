@@ -25,7 +25,7 @@ class ExerciseController extends Controller
      */
     public function create()
     {
-        //
+        return view('exercises.create');
     }
 
     /**
@@ -36,7 +36,9 @@ class ExerciseController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $exercise = new Exercise($request->all());
+        $exercise->save();
+        return redirect()->route('exercises.index');
     }
 
     /**
