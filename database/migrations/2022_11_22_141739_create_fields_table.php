@@ -15,6 +15,9 @@ return new class extends Migration
     {
         Schema::create('fields', function (Blueprint $table) {
             $table->id();
+            $table->string('label');
+            $table->enum('value_kind', ['single_line', 'single_line_list', 'multi_line']);
+            $table->foreignId('exercise_id')->constrained('exercises');
             $table->timestamps();
         });
     }

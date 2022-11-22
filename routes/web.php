@@ -15,3 +15,4 @@ use App\Http\Controllers\ExerciseController;
 */
 
 Route::resource('exercises', ExerciseController::class)->except(['show', 'edit', 'update']);
+Route::resource('fields', FieldController::class)->except(['show']);
