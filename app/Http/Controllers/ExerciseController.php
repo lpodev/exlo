@@ -48,6 +48,6 @@ class ExerciseController extends Controller
     public function destroy(Exercise $exercise)
     {
         $exercise->delete();
-        return redirect("/exercises");
+        return redirect()->route('exercises.index');
     }
 }

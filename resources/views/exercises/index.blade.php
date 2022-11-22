@@ -3,7 +3,7 @@
     @foreach ($exercises as $exercise)
     <li>
         {{ $exercise->title }}
-        <form action="/exercises/{{ $exercise->id }}" method="POST">
+        <form action="{{ route('exercises.destroy', $exercise) }}" method="POST">
             @method('DELETE')
             @csrf
             <button>Suprrimer</button>
