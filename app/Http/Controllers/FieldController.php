@@ -26,7 +26,7 @@ class FieldController extends Controller
      */
     public function create(Exercise $exercise)
     {
-        //
+        return view('fields.create', ['exercise' => $exercise, 'value_kind_cases' => (new Field)->getCasts()['value_kind']::cases()]);
     }
 
     /**

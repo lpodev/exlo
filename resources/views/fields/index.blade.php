@@ -13,3 +13,4 @@
     </li>
     @endforeach
 </ul>
+<a href="{{ route('exercises.fields.create', $exercise) }}">Add new field</a>
