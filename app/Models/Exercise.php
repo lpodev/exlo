@@ -17,4 +17,9 @@ class Exercise extends Model
     ];
 
     protected $fillable = ['title'];
+
+    public function fields()
+    {
+        return $this->hasMany(Field::class);
+    }
 }

@@ -2,7 +2,7 @@
 <ul>
     @foreach ($exercises as $exercise)
     <li>
-        {{ $exercise->title }}
+        <a href="{{ route('exercises.fields.index', $exercise) }}">{{ $exercise->title }}</a>
         <form action="{{ route('exercises.destroy', $exercise) }}" method="POST">
             @method('DELETE')
             @csrf

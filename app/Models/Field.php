@@ -17,4 +17,10 @@ class Field extends Model
     ];
 
     protected $fillable = ['label', 'value_kind'];
+
+    public function exercise()
+    {
+        return $this->belongsTo(Exercise::class);
+    }
+
 }

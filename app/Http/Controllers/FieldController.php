@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Field;
+use App\Models\Exercise;
 use Illuminate\Http\Request;
 
 class FieldController extends Controller
@@ -12,9 +13,10 @@ class FieldController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Exercise $exercise)
     {
-        //
+        $fields = $exercise->fields;
+        return view('fields.index', compact('exercise', 'fields'));
     }
 
     /**
@@ -22,7 +24,7 @@ class FieldController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Exercise $exercise)
     {
         //
     }
@@ -44,7 +46,7 @@ class FieldController extends Controller
      * @param  \App\Models\Field  $field
      * @return \Illuminate\Http\Response
      */
-    public function edit(Field $field)
+    public function edit(Exercise $exercise, Field $field)
     {
         //
     }
@@ -56,7 +58,7 @@ class FieldController extends Controller
      * @param  \App\Models\Field  $field
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Field $field)
+    public function update(Request $request, Exercise $exercise, Field $field)
     {
         //
     }
@@ -67,7 +69,7 @@ class FieldController extends Controller
      * @param  \App\Models\Field  $field
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Field $field)
+    public function destroy(Exercise $exercise, Field $field)
     {
         //
     }
