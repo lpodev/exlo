@@ -4,7 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-enum FieldValueKind {
+enum FieldValueKind
+{
     case single_line;
     case single_line_list;
     case multi_line;
@@ -17,4 +18,9 @@ class Field extends Model
     ];
 
     protected $fillable = ['label', 'value_kind'];
+
+    public function exercise()
+    {
+        return $this->belongsTo(Exercise::class);
+    }
 }

@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ExerciseController;
+use App\Http\Controllers\FieldController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,4 +16,4 @@ use App\Http\Controllers\ExerciseController;
 */
 
 Route::resource('exercises', ExerciseController::class)->except(['show', 'edit', 'update']);
-Route::resource('fields', FieldController::class)->except(['show']);
+Route::resource('exercises.fields', FieldController::class)->except(['show']);
