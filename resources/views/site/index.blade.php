@@ -1,13 +1,13 @@
 <head>
     <title>ExerciseLooper</title>
-    <link rel="stylesheet" media="all" href="{{ asset('css/stylesheet.css') }}" />
-    <script src="{{ asset('js/script.css') }}"></script>
+    <link rel="stylesheet" media="all" href="{{ asset('/') }}./css/stylesheet.css" />
+    <script src="{{ asset('/') }}./js/script.js"></script>
 </head>
 
 <body>
     <header class="dashboard">
         <section class="container">
-            <a href="/"><img src="{{ asset('images/logo.png') }}" /></a>
+            <a href="/"><img src="{{ asset('/') }}./images/logo.png" /></a>
             <h1>Exercise<br>Looper</h1>
         </section>
     </header>
