@@ -47,9 +47,10 @@ class FieldController extends Controller
      * @param  \App\Models\Field  $field
      * @return \Illuminate\Http\Response
      */
-    public function edit(Field $field)
+    public function edit(Exercise $exercise, Field $field)
     {
-        //
+        return view('fields.edit', ['exercise' => $exercise, "field" => $field, 'value_kind_cases' => (new Field)->getCasts()['value_kind']::cases()]);
+
     }
 
     /**
@@ -59,9 +60,10 @@ class FieldController extends Controller
      * @param  \App\Models\Field  $field
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Field $field)
+    public function update(Request $request, Exercise $exercise, Field $field)
     {
-        //
+        $field = $exercise->fields()->update($request->all());
+        return redirect()->route('exercises.fields.index', $exercise);
     }
 
     /**

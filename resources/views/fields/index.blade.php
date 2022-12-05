@@ -11,6 +11,7 @@
             @csrf
             <button>Supprimer</button>
         </form>
-    </li>
+        <a href="{{ route('exercises.fields.edit', [$exercise, $field]) }}">Modifier</a>
+    </li><br>
     @endforeach
 </ul>
