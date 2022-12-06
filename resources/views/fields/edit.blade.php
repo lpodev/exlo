@@ -1,6 +1,7 @@
 <h1>Edit field</h1>
-<form action="{{ route('exercises.fields.update', [$exercise, $field]) }}" method="PATCH">
+<form action="{{ route('exercises.fields.update', [$exercise, $field]) }}" method="POST">
     @csrf
+    @method("PATCH")
     <label for="label">Label:</label>
     <input id="label" name="label" type="text" value="{{ $field->label }}">
 
@@ -10,6 +11,5 @@
         <option value="{{ $value_kind->name }}">{{ $value_kind->name }}</option>
         @endforeach
     </select>
-
     <button>Sauver</button>
 </form>

@@ -62,7 +62,7 @@ class FieldController extends Controller
      */
     public function update(Request $request, Exercise $exercise, Field $field)
     {
-        $field = $exercise->fields()->update($request->all());
+        $field->update($request->all());
         return redirect()->route('exercises.fields.index', $exercise);
     }
 
