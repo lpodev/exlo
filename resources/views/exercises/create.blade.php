@@ -1,7 +1,21 @@
+@extends('layouts.app')
+@section('title', 'Create Exercise')
+
+
+@section('content')
+
 <h1>New Exercise</h1>
-<form action="{{ route('exercises.store') }}" method="POST">
+
+<form action="{{ route('exercises.store') }}" method="post">
     @csrf
-    <label for="title">Titre:</label>
-    <input id="title" name="title" type="text">
-    <button>Ajouter</button>
+
+    <div class="field">
+        <label for="title">Title</label>
+        <input type="text" name="title" id="title" />
+    </div>
+
+    <div class="actions">
+        <input type="submit" value="Create Exercise" />
+    </div>
 </form>
+@endsection
