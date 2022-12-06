@@ -22,4 +22,10 @@ class Exercise extends Model
     {
         return $this->hasMany(Field::class);
     }
+    
+    public function delete()
+    {
+        $this->fields()->delete();
+        parent::delete();
+    }
 }
