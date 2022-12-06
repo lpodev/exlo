@@ -10,6 +10,7 @@
             @csrf
             <button>Suprrimer</button>
         </form>
+        <a href="{{ route('exercises.fields.edit', compact('exercise', 'field')) }}">Modifier</a>
     </li>
     @endforeach
 </ul>
