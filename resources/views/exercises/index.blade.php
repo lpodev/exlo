@@ -1,21 +1,38 @@
 @extends('layouts.app')
 @section('title', 'Exercises')
-
+@section('subtitle', 'Manage Exercises')
 
 @section('content')
-<h1>Exercises</h1>
+<h1>Manage Exercises</h1>
 
-@foreach ($exercises as $exercise)
-<div style="border: 1px solid black;">
-    <h3>{{ $exercise->title }}</h3>
-    <form action="{{ route('exercises.destroy', $exercise) }}" method="POST">
-        @method('DELETE')
-        @csrf
-        <button>Supprimer</button>
-    </form>
-    <a href="{{ route('exercises.fields.create', $exercise) }}">Ajouter des fields</a>
-    <br><a href="{{ route('exercises.fields.index', $exercise) }}">Voir tous les choses dans la liste appelée par le
-        nom nommé fields</a>
-
-</div>
-@endforeach
+<section class="column">
+    <table class="records">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach ($exercises as $exercise)
+            <tr>
+                <td>
+                    {{ $exercise->title }}
+                </td>
+                <td>
+                    <a title="Add field" href="{{ route('exercises.fields.create', $exercise) }}"><button><i
+                                class="fa fa-plus"></i></button></a>
+                    <a title="Manage fields" href="{{ route('exercises.fields.index', $exercise) }}"><button><i
+                                class="fa fa-edit"></i></button></a>
+                    <form action="{{ route('exercises.destroy', $exercise) }}" method="POST">
+                        @method('DELETE')
+                        @csrf
+                        <button data-confirm="Are you sure?"><i class="fa fa-trash"></i></button>
+                    </form>
+                </td>
+            </tr>
+            @endforeach
+        </tbody>
+    </table>
+</section>
+@endsection

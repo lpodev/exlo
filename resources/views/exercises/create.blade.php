@@ -1,5 +1,6 @@
 @extends('layouts.app')
-@section('title', 'Create Exercise')
+@section('title', 'New Exercise')
+@section('subtitle', 'Create an exercise')
 
 
 @section('content')
