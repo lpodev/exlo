@@ -73,6 +73,7 @@ class FieldController extends Controller
      */
     public function destroy(Exercise $exercise, Field $field)
     {
-        //
+        $field->delete();
+        return redirect()->route('exercises.fields.index', $exercise);
     }
 }
