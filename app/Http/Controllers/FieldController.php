@@ -37,6 +37,11 @@ class FieldController extends Controller
      */
     public function store(Request $request, Exercise $exercise)
     {
+        $validated = $request->validate([
+            'label' => 'required|max:10',
+            'value_kind' => 'required',
+        ]);
+
         $field = $exercise->fields()->create($request->all());
         return redirect()->route('exercises.fields.index', $exercise);
     }

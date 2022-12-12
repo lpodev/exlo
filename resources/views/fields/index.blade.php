@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', '{{ $exercise->title }}')
+@section('title', 'Fields of ' . $exercise->title)
 
 @section('content')
 <div style="text-align: center;">
