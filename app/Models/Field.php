@@ -12,6 +12,9 @@ enum FieldValueKind {
 
 class Field extends Model
 {
+    // Workaround to expose the enum without putting it in another namespace and file.
+    public static $FieldValueKind = FieldValueKind::class;
+
     protected $casts = [
         'value_kind' => FieldValueKind::class,
     ];

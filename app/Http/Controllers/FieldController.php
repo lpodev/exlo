@@ -26,7 +26,7 @@ class FieldController extends Controller
      */
     public function create(Exercise $exercise)
     {
-        return view('fields.create', ['exercise' => $exercise, 'value_kind_cases' => (new Field)->getCasts()['value_kind']::cases()]);
+        return view('fields.create', ['exercise' => $exercise, 'value_kind_cases' => Field::$FieldValueKind::cases()]);
     }
 
     /**
@@ -49,7 +49,7 @@ class FieldController extends Controller
      */
     public function edit(Exercise $exercise, Field $field)
     {
-        return view('fields.edit', ['exercise' => $exercise, 'field' => $field, 'value_kind_cases' => (new Field)->getCasts()['value_kind']::cases()]);
+        return view('fields.edit', ['exercise' => $exercise, 'field' => $field, 'value_kind_cases' => Field::$FieldValueKind::cases()]);
     }
 
     /**
