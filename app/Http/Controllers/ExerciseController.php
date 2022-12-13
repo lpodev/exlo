@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Exercise;
 use Illuminate\Http\Request;
+use App\Http\Requests\ExerciseFormRequest;
 
 class ExerciseController extends Controller
 {
@@ -34,7 +35,7 @@ class ExerciseController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ExerciseFormRequest $request)
     {
         $exercise = new Exercise($request->all());
         $exercise->save();

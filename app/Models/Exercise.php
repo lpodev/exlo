@@ -12,6 +12,9 @@ enum ExerciseState {
 
 class Exercise extends Model
 {
+    // Workaround to expose the enum without putting it in another namespace and file.
+    public static $ExerciseState = ExerciseState::class;
+
     protected $casts = [
         'state' => ExerciseState::class,
     ];
