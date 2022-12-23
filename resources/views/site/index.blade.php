@@ -27,7 +27,7 @@
     <div class="container dashboard">
         <section class="row">
             <div class="column">
-                <a class="button answering column" href="#">Take an exercise</a>
+                <a class="button answering column" href="#" disabled>Take an exercise</a>
             </div>
             <div class="column">
                 <a class="button managing column" href="{{ route('exercises.create') }}">Create an exercise</a>

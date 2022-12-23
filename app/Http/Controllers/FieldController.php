@@ -38,7 +38,7 @@ class FieldController extends Controller
     public function store(Request $request, Exercise $exercise)
     {
         $validated = $request->validate([
-            'label' => 'required|max:10',
+            'label' => 'required|max:255',
             'value_kind' => 'required',
         ]);
 

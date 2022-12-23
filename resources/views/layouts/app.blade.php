@@ -11,7 +11,7 @@
         <header class="heading managing">
             <section class="container">
                 <a href="/"><img src="/images/logo.png" /></a>
-                <span class="exercise-label">@yield('subtitle')</span>
+                <span class="exercise-label">@yield('title')</span>
             </section>
         </header>
         @yield('content')

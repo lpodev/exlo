@@ -13,6 +13,8 @@ enum ExerciseState
 
 class Exercise extends Model
 {
+    public static $ExerciseState = ExerciseState::class;
+
     protected $casts = [
         'state' => ExerciseState::class,
     ];

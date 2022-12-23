@@ -19,14 +19,14 @@
                 <td>
                     {{ $exercise->title }}
                 </td>
-                <td>
-                    <a title="Add field" href="{{ route('exercises.fields.create', $exercise) }}"><button><i
-                                class="fa fa-plus"></i></button></a>
-                    <a title="Manage fields" href="{{ route('exercises.fields.index', $exercise) }}"><button><i
-                                class="fa fa-edit"></i></button></a>
+                <td style="vertical-align: auto;">
                     <form action="{{ route('exercises.destroy', $exercise) }}" method="POST">
                         @method('DELETE')
                         @csrf
+                        <a title="Add field" href="{{ route('exercises.fields.create', $exercise) }}"><button
+                                type="button"><i class="fa fa-plus"></i></button></a>
+                        <a title="Manage fields" href="{{ route('exercises.fields.index', $exercise) }}"><button
+                                type="button"><i class="fa fa-edit"></i></button></a>
                         <button data-confirm="Are you sure?"><i class="fa fa-trash"></i></button>
                     </form>
                 </td>

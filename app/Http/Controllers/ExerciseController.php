@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Validation\Rules\Enum;
 use App\Models\Exercise;
 use Illuminate\Http\Request;
 
@@ -36,6 +37,11 @@ class ExerciseController extends Controller
      */
     public function store(Request $request)
     {
+        $validated = $request->validate([
+            'title' => 'required|max:255',
+            'state' => [new Enum(Exercise::$ExerciseState)],
+        ]);
+
         $exercise = new Exercise($request->all());
         $exercise->save();
         return redirect()->route('exercises.index');
